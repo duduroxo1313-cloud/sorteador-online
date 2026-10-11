@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sorteador Online</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <main class="container">
+
+        <section class="card">
+
+            <p class="eyebrow">PROJETO PRÁTICO</p>
+
+            <h1> Sorteador Online</h1>
+
+            <p class="subtitle">
+                Adicione nomes ou itens e descubra quem será o vencedor!
+            </p>
+
+            <form id="sorteadorForm">
+
+                <label for="listaEntrada">Nomes para o sorteio</label>
+
+                <textarea
+                    id="listaEntrada"
+                    rows="6"
+                    placeholder="Exemplo: Ana, Bruno, Carlos..."
+                    aria-describedby="ajudaEntrada"
+                ></textarea>
+
+                <p id="ajudaEntrada" class="help-text">
+                    Separe os nomes por vírgula ou digite um nome por linha.
+                </p>
+
+                <div class="botoes">
+
+                    <button type="submit" class="btn-sortear">
+                         Sortear agora
+                    </button>
+
+                    <button type="button" id="btnLimpar" class="btn-limpar">
+                        Limpar
+                    </button>
+
+                </div>
+
+            </form>
+
+            <p id="status" class="status" role="status" aria-live="polite"></p>
+
+            <section
+                id="resultadoBox"
+                class="resultado escondido"
+                aria-live="polite"
+            >
+
+                <p class="result-label"> O vencedor foi:</p>
+
+                <p id="resultado" class="ganhador"></p>
+
+            </section>
+
+        </section>
+
+    </main>
+
+    <footer class="footer">
+
+        <h2> Perguntas de revisão</h2>
+
+        <div class="pergunta">
+            <h3>1. Qual é a diferença entre .value e .textContent?</h3>
+            <p>
+                A propriedade .value lê ou altera o valor de campos de entrada,
+                como textarea e input. Já .textContent lê ou altera o texto
+                de um elemento HTML.
+            </p>
+        </div>
+
+        <div class="pergunta">
+            <h3>2. Por que precisamos usar Math.floor() no sorteio?</h3>
+            <p>
+                Porque Math.floor() arredonda o número para baixo, gerando
+                um índice inteiro válido para acessar um item do array.
+            </p>
+        </div>
+
+        <div class="pergunta">
+            <h3>3. O que aconteceria se não usássemos filter()?</h3>
+            <p>
+                Entradas vazias poderiam continuar no array e até ser
+                sorteadas, dependendo de como os dados fossem tratados.
+            </p>
+        </div>
+
+        <div class="pergunta">
+            <h3>4. Para que serve event.preventDefault()?</h3>
+            <p>
+                Serve para impedir o comportamento padrão do formulário,
+                evitando que a página seja recarregada durante o sorteio.
+            </p>
+        </div>
+
+        <div class="pergunta">
+            <h3>5. Qual é a diferença entre classList.add() e classList.remove()?</h3>
+            <p>
+                classList.add() adiciona uma classe CSS a um elemento.
+                classList.remove() remove uma classe CSS desse elemento.
+            </p>
+        </div>
+
+        <div class="pergunta">
+            <h3>6. Por que usamos textContent em vez de innerHTML?</h3>
+            <p>
+                Porque textContent insere o conteúdo como texto simples,
+                sendo mais adequado e seguro para exibir os nomes sorteados.
+                O innerHTML interpreta o conteúdo como HTML.
+            </p>
+        </div>
+
+        <div class="pergunta">
+            <h3>7. Como você faria para permitir apenas números?</h3>
+            <p>
+                Poderia usar o input do tipo number com validação em
+                JavaScript. Também seria possível verificar se o valor
+                digitado contém apenas números.
+            </p>
+        </div>
+
+        <div class="pergunta">
+            <h3>8. Como armazenaria os itens no localStorage?</h3>
+            <p>
+                Usaria JSON.stringify() para transformar o array em texto
+                e localStorage.setItem() para armazená-lo. Para recuperar
+                os dados, usaria localStorage.getItem() e JSON.parse().
+            </p>
+        </div>
+
+        <div class="pergunta">
+            <h3>9. Qual desafio extra foi implementado?</h3>
+            <p>
+                Foi implementada uma animação CSS para destacar o resultado
+                do sorteio quando o nome do vencedor aparece na tela.
+            </p>
+        </div>
+
+        <div class="pergunta">
+            <h3>10. Quais métodos do DOM foram utilizados?</h3>
+            <p>
+                Foram utilizados getElementById(), addEventListener(),
+                classList.add(), classList.remove(), textContent e value,
+                além de métodos para tratar os dados digitados.
+            </p>
+        </div>
+
+        <div class="pergunta">
+            <h3>11. Que problema encontrou e como resolveu?</h3>
+            <p>
+                Um problema possível é tentar realizar o sorteio sem digitar
+                nomes. Isso foi resolvido com uma validação que exibe uma
+                mensagem quando a lista está vazia.
+            </p>
+        </div>
+
+        <div class="pergunta">
+            <h3>12. O que você melhoraria em uma próxima versão?</h3>
+            <p>
+                Adicionaria um histórico de vencedores, uma contagem
+                regressiva e a opção de impedir que um nome seja sorteado
+                novamente.
+            </p>
+        </div>
+
+        <p class="copyright">
+            Sorteador Online — Projeto de Desenvolvimento Web
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
